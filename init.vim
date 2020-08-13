@@ -1,10 +1,13 @@
 syntax on
 
 set autoindent
-set tabstop=2 softtabstop=2
-set shiftwidth=2
+
+set ts=4
+set sts=4
+set sw=4
 set expandtab
 set smartindent
+
 set nu
 set nowrap
 set smartcase
@@ -25,9 +28,13 @@ set ruler
 set relativenumber
 set showmatch
 set encoding=utf-8
-set sw=2
 set laststatus=2
 set hidden
+
+autocmd Filetype dart setlocal et ts=2 sw=2 sts=2
+
+set listchars=tab:\|\ 
+set list
 
 let g:clipboard = {
       \   'name': 'myClipboard',
@@ -58,6 +65,7 @@ Plug 'mattn/emmet-vim'
 
 Plug 'mbbill/undotree'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-fugitive'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -68,8 +76,12 @@ Plug 'tpope/vim-dispatch'
 
 " Experimental zone
 Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
+Plug 'Yggdroot/indentLine'
+Plug 'gruvbox-community/gruvbox'
 
 call plug#end()
+
+runtime coc.vim
 
 set termguicolors
 
@@ -81,9 +93,6 @@ let $FZF_DEFAULT_OPTS='--reverse'
 "Javascript configuration
 let g:javascript_plugin_jsdoc = 1
 
-
-let g:miramare_enable_italic=1
-let g:miramare_disable_italic_comment=1
 let g:dart_style_guide=2
 
 let g:fzf_preview_window=''
@@ -93,19 +102,29 @@ let g:lsc_auto_map = v:true
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
-colorscheme miramare
+
+let g:indentLine_char = '▏'
+
+let g:gruvbox_contrast_dark = 'hard'
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+let g:gruvbox_invert_selection='0'
+
+colorscheme gruvbox
+set background=dark
 
 let mapleader=" "
 
 nmap <C-p> :Files<CR>
-nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>nt :NERDTreeFind<CR>
 
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 
-nnoremap <Leader>+ :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
+nnoremap <Leader>+ :vertical resize +15<CR>
+nnoremap <Leader>- :vertical resize -15<CR>
 nnoremap <Leader>rp :resize 100<CR>
 
 "COC search and stuff
