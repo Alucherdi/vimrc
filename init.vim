@@ -1,10 +1,15 @@
 syntax on
 
-set autoindent
+set guicursor=
+set relativenumber
+set nohlsearch
+set hidden
+set noerrorbells
 
 set ts=4
 set sts=4
 set sw=4
+
 set expandtab
 set smartindent
 
@@ -16,26 +21,32 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
-
+set termguicolors
 set scrolloff=8
-set noerrorbells
+set noshowmode
 
 set cmdheight=2
 set updatetime=50
+set shortmess+=c
 
+" Sorry :(
 set mouse=a
-set ruler
-set relativenumber
-set showmatch
+
+set termguicolors
+
 set encoding=utf-8
 set laststatus=2
-set hidden
 
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" Change to 2 spaces for dart
 autocmd Filetype dart setlocal et ts=2 sw=2 sts=2
 
-set listchars=tab:\|\ 
-set list
-
+set path+=**
+" Experimental zone
+set wildignore+=**/node_modules/**
+" /Experimental zone
 let g:clipboard = {
       \   'name': 'myClipboard',
       \   'copy': {
@@ -49,13 +60,9 @@ let g:clipboard = {
       \   'cache_enabled': 1,
       \ }
 
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'franbach/miramare'
-Plug 'preservim/nerdtree'
 
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'jelera/vim-javascript-syntax'
@@ -117,7 +124,7 @@ set background=dark
 
 let mapleader=" "
 
-nmap <C-p> :Files<CR>
+nmap <C-p> :GFiles --cached --others --exclude-standard<CR>
 nmap <Leader>nt :NERDTreeFind<CR>
 
 nmap <Leader>w :w<CR>
@@ -127,6 +134,20 @@ nnoremap <Leader>+ :vertical resize +15<CR>
 nnoremap <Leader>- :vertical resize -15<CR>
 nnoremap <Leader>rp :resize 100<CR>
 
-"COC search and stuff
-nmap <leader>rr <Plug>(coc-rename)
-nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+"Sweet Sweet FuGITive
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gs :G<CR>
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+augroup END
+
+autocmd BufWritePre * :call TrimWhitespace()
