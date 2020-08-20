@@ -96,6 +96,9 @@ set termguicolors
 " FZF Config
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
+let $FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
+
+
 
 "Javascript configuration
 let g:javascript_plugin_jsdoc = 1
@@ -124,7 +127,7 @@ set background=dark
 
 let mapleader=" "
 
-nmap <C-p> :GFiles --cached --others --exclude-standard<CR>
+nmap <C-p> :Files<CR>
 nmap <Leader>nt :NERDTreeFind<CR>
 
 nmap <Leader>w :w<CR>
