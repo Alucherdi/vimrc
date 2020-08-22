@@ -76,6 +76,7 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -97,8 +98,6 @@ set termguicolors
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 let $FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
-
-
 
 "Javascript configuration
 let g:javascript_plugin_jsdoc = 1
@@ -141,6 +140,7 @@ nnoremap <Leader>rp :resize 100<CR>
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :G<CR>
+nmap <leader>gc :GCheckout<CR>
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
