@@ -2,13 +2,13 @@ syntax on
 
 set guicursor=
 set relativenumber
-set nohlsearch
+"set nohlsearch
 set hidden
 set noerrorbells
 
 set ts=4
-set sts=4
-set sw=4
+set sts=2
+set sw=2
 
 set expandtab
 set smartindent
@@ -23,7 +23,7 @@ set undofile
 set incsearch
 set termguicolors
 set scrolloff=8
-set noshowmode
+"set noshowmode
 
 set cmdheight=2
 set updatetime=50
@@ -127,7 +127,6 @@ set background=dark
 let mapleader=" "
 
 nmap <C-p> :Files<CR>
-nmap <Leader>nt :NERDTreeFind<CR>
 
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
@@ -141,6 +140,7 @@ nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :G<CR>
 nmap <leader>gc :GCheckout<CR>
+nmap <leader>cc :Gcommit<CR>
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
