@@ -62,13 +62,9 @@ let g:clipboard = {
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'franbach/miramare'
+Plug 'vim-airline/vim-airline'
 
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'mxw/vim-jsx'
-Plug 'elzr/vim-json'
-Plug 'mattn/emmet-vim'
 
 Plug 'mbbill/undotree'
 Plug 'christoomey/vim-tmux-navigator'
@@ -85,7 +81,11 @@ Plug 'tpope/vim-dispatch'
 " Experimental zone
 Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 Plug 'Yggdroot/indentLine'
+
+" Themes
 Plug 'gruvbox-community/gruvbox'
+Plug 'franbach/miramare'
+Plug 'phanviet/vim-monokai-pro'
 
 call plug#end()
 
@@ -121,7 +121,7 @@ if exists('+termguicolors')
 endif
 let g:gruvbox_invert_selection='0'
 
-colorscheme gruvbox
+colorscheme miramare
 set background=dark
 
 let mapleader=" "
