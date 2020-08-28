@@ -64,13 +64,7 @@ call plug#begin('~/.vim/plugged')
     " Idk how the fuck I was not using you
     Plug 'vim-airline/vim-airline'
 
-<<<<<<< HEAD
-Plug 'vim-airline/vim-airline'
-
-Plug 'dart-lang/dart-vim-plugin'
-=======
     Plug 'dart-lang/dart-vim-plugin'
->>>>>>> 78b3ef279c355ffc2ab61bdc126177ad5973ee76
 
     Plug 'mbbill/undotree'
     Plug 'tpope/vim-fugitive'
@@ -83,20 +77,9 @@ Plug 'dart-lang/dart-vim-plugin'
 
     Plug 'tpope/vim-dispatch'
 
-<<<<<<< HEAD
-" Experimental zone
-Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
-Plug 'Yggdroot/indentLine'
-
-" Themes
-Plug 'gruvbox-community/gruvbox'
-Plug 'franbach/miramare'
-Plug 'phanviet/vim-monokai-pro'
-=======
     " Experimental zone
     Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
     Plug 'Yggdroot/indentLine'
->>>>>>> 78b3ef279c355ffc2ab61bdc126177ad5973ee76
 
     " Themes
     Plug 'gruvbox-community/gruvbox'
@@ -134,11 +117,7 @@ let g:indentLine_char = '▏'
 "let g:gruvbox_invert_selection='0'
 
 colorscheme miramare
-<<<<<<< HEAD
-set background=dark
-=======
 "set background=dark
->>>>>>> 78b3ef279c355ffc2ab61bdc126177ad5973ee76
 
 let mapleader=" "
 
@@ -179,3 +158,4 @@ augroup highlight_yank
 augroup END
 
 autocmd BufWritePre * :call TrimWhitespace()
+
