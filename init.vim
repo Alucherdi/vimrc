@@ -23,7 +23,7 @@ set undofile
 set incsearch
 set termguicolors
 set scrolloff=8
-"set noshowmode
+set noshowmode
 
 set cmdheight=2
 set updatetime=50
@@ -74,6 +74,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'stsewd/fzf-checkout.vim'
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'OmniSharp/omnisharp-vim'
 
     Plug 'tpope/vim-dispatch'
 
@@ -84,8 +85,9 @@ call plug#begin('~/.vim/plugged')
     " Themes
     Plug 'gruvbox-community/gruvbox'
     Plug 'franbach/miramare'
-    Plug 'phanviet/vim-monokai-pro'
-    Plug 'rakr/vim-two-firewatch'
+    Plug 'cocopon/iceberg.vim'
+    Plug 'co1ncidence/mountaineer.vim'
+    Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 runtime coc.vim
@@ -107,17 +109,18 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 let g:netrw_liststyle = 3
 
+" Omnisharp shit
+let g:OmniSharp_server_use_mono = 1
+
 let g:indentLine_char = '▏'
 
-"let g:gruvbox_contrast_dark = 'hard'
-"if exists('+termguicolors')
-"    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"endif
-"let g:gruvbox_invert_selection='0'
-
+" Theme config shit
+let g:miramare_enable_italic = 2
+let g:miramare_disable_italic_comment = 1
 colorscheme miramare
-"set background=dark
+
+let g:airline_theme = 'miramare'
+
 
 let mapleader=" "
 
@@ -129,10 +132,6 @@ nmap <C-l> <C-w>l
 
 " Ctrl P
 nmap <C-p> :Files<CR>
-
-" Sorry :( x 2
-nmap <Leader>w :w<CR>
-nmap <Leader>q :q<CR>
 
 nnoremap <Leader>+ :vertical resize +15<CR>
 nnoremap <Leader>- :vertical resize -15<CR>
