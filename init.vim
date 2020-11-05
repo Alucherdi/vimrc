@@ -85,9 +85,6 @@ call plug#begin('~/.vim/plugged')
     " Themes
     Plug 'gruvbox-community/gruvbox'
     Plug 'franbach/miramare'
-    Plug 'cocopon/iceberg.vim'
-    Plug 'co1ncidence/mountaineer.vim'
-    Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 runtime coc.vim

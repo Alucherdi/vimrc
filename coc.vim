@@ -121,6 +121,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Show all diagnostics.
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 
+nnoremap <nowait> <space>f :CocSearch<space>
 :nmap <space>e :CocCommand explorer<CR>
 " Manage extensions.
 nnoremap <silent><nowait> <space>E  :<C-u>CocList extensions<cr>
