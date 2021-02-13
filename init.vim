@@ -1,8 +1,7 @@
 syntax on
 
-" set guicursor=
 set relativenumber
-"set nohlsearch
+set nohlsearch
 set hidden
 set noerrorbells
 
@@ -28,9 +27,6 @@ set noshowmode
 set cmdheight=2
 set updatetime=50
 set shortmess+=c
-
-" Sorry :(
-set mouse=a
 
 set encoding=utf-8
 set laststatus=2
@@ -63,9 +59,7 @@ let g:clipboard = {
 call plug#begin('~/.vim/plugged')
     " Idk how the fuck I was not using you
     Plug 'vim-airline/vim-airline'
-
     Plug 'dart-lang/dart-vim-plugin'
-
     Plug 'mbbill/undotree'
     Plug 'tpope/vim-fugitive'
 
@@ -74,17 +68,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'stsewd/fzf-checkout.vim'
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'OmniSharp/omnisharp-vim'
-
-    Plug 'tpope/vim-dispatch'
-
-    " Experimental zone
-    Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
-    Plug 'Yggdroot/indentLine'
+    " Plug 'Yggdroot/indentLine'
+    Plug 'pangloss/vim-javascript'
 
     " Themes
     Plug 'gruvbox-community/gruvbox'
-    Plug 'franbach/miramare'
 call plug#end()
 
 runtime coc.vim
@@ -94,7 +82,7 @@ set termguicolors
 " FZF Config
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
-let $FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
+let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 let g:dart_style_guide=2
 let g:fzf_preview_window=''
@@ -106,18 +94,17 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 let g:netrw_liststyle = 3
 
-" Omnisharp shit
-let g:OmniSharp_server_use_mono = 1
-
-let g:indentLine_char = '▏'
-
 " Theme config shit
-let g:miramare_enable_italic = 2
-let g:miramare_disable_italic_comment = 1
-colorscheme miramare
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_italic = 1
+let g:gruvbox_vert_split = "orange"
+let g:gruvbox_italicize_comments = 0
+let g:gruvbox_invert_indent_guides = 1
+let g:gruvbox_invert_tabline = 1
+let g:gruvbox_improved_warnings = 1
 
-let g:airline_theme = 'miramare'
-
+set bg=dark
 
 let mapleader=" "
 
