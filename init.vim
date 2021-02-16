@@ -72,39 +72,25 @@ call plug#begin('~/.vim/plugged')
     Plug 'pangloss/vim-javascript'
 
     " Themes
-    Plug 'gruvbox-community/gruvbox'
+    Plug 'chriskempson/base16-vim'
 call plug#end()
 
 runtime coc.vim
 
+" Themes
+let base16colorspace=256
+
 set termguicolors
+set background=dark
+colorscheme base16-horizon-dark
+" /Themes
+
 
 " FZF Config
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-let $FZF_DEFAULT_OPTS='--reverse'
+let g:fzf_layout = { 'down': '30%' }
 let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 let g:dart_style_guide=2
-let g:fzf_preview_window=''
-
-let g:lsc_auto_map = v:true
-
-let g:netrw_browse_split = 2
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
-let g:netrw_liststyle = 3
-
-" Theme config shit
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
-let g:gruvbox_italic = 1
-let g:gruvbox_vert_split = "orange"
-let g:gruvbox_italicize_comments = 0
-let g:gruvbox_invert_indent_guides = 1
-let g:gruvbox_invert_tabline = 1
-let g:gruvbox_improved_warnings = 1
-
-set bg=dark
 
 let mapleader=" "
 
