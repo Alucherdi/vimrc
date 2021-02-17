@@ -14,7 +14,6 @@ set smartindent
 
 set nu
 set nowrap
-set smartcase
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -35,6 +34,7 @@ set laststatus=2
 set splitbelow
 set splitright
 
+set signcolumn=yes
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
@@ -59,6 +59,8 @@ let g:clipboard = {
 call plug#begin('~/.vim/plugged')
     " Idk how the fuck I was not using you
     Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'mbbill/undotree'
     Plug 'tpope/vim-fugitive'
