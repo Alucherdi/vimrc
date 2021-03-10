@@ -36,10 +36,12 @@ set splitright
 
 set signcolumn=yes
 set colorcolumn=80
+set ic
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Change to 2 spaces for dart
 autocmd Filetype dart setlocal et ts=2 sw=2 sts=2
+autocmd Filetype yaml setlocal et ts=2 sw=2 sts=2
 
 set path+=**
 
@@ -65,6 +67,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'mbbill/undotree'
     Plug 'tpope/vim-fugitive'
 
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'stsewd/fzf-checkout.vim'
@@ -75,21 +82,31 @@ call plug#begin('~/.vim/plugged')
 
     " Themes
     Plug 'chriskempson/base16-vim'
+    Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 runtime coc.vim
 
 " Themes
-let base16colorspace=256
+" let base16colorspace=256
 
 set termguicolors
 set background=dark
-colorscheme base16-horizon-dark
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_disable_italic_comment = 1
+
+colorscheme gruvbox-material
+
+" colorscheme
+" set background=dark
+" colorscheme base16-horizon-dark
+" hi Normal guibg=NONE ctermbg=NONE
 " /Themes
 
-
 " FZF Config
-let g:fzf_layout = { 'down': '30%' }
+let g:fzf_preview_window=''
+let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.6 } }
+let $FZF_DEFAULT_OPTS='--reverse'
 let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 let g:dart_style_guide=2
@@ -103,7 +120,7 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " Ctrl P
-nmap <C-p> :Files<CR>
+nmap <C-p> :Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>
 
 nnoremap <Leader>+ :vertical resize +15<CR>
 nnoremap <Leader>- :vertical resize -15<CR>
