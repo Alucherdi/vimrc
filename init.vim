@@ -37,6 +37,7 @@ set splitright
 set signcolumn=yes
 set colorcolumn=80
 set ic
+set cursorline
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Change to 2 spaces for dart
@@ -72,10 +73,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    Plug 'stsewd/fzf-checkout.vim'
-
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Plug 'Yggdroot/indentLine'
     Plug 'pangloss/vim-javascript'
@@ -103,12 +100,6 @@ colorscheme gruvbox-material
 " hi Normal guibg=NONE ctermbg=NONE
 " /Themes
 
-" FZF Config
-let g:fzf_preview_window=''
-let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.6 } }
-let $FZF_DEFAULT_OPTS='--reverse'
-let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-
 let g:dart_style_guide=2
 
 let mapleader=" "
@@ -120,19 +111,34 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " Ctrl P
-nmap <C-p> :Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>
+"
+lua << EOF
+require("telescope").setup{
+    defaults = {
+        prompt_position = "top",
+        prompt_prefix = "",
+        sorting_strategy = "ascending",
+        shorten_path = true,
+        color_devicons = true,
+        preview_cutoff = 0,
+        set_env = { ['COLORTERM'] = 'truecolor' },
+    }
+}
+require('telescope').load_extension('fzy_native')
+EOF
 
-nnoremap <Leader>+ :vertical resize +15<CR>
-nnoremap <Leader>- :vertical resize -15<CR>
-nnoremap <Leader>vr :vertical resize 100<CR>
-nnoremap <Leader>hr :resize 100<CR>
+nmap <C-p> :Telescope find_files find_command=rg,--ignore,--files<CR>
+nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 
+"
 "Sweet Sweet FuGITive
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
-nmap <leader>gs :G<CR>
+nmap <leader>gs :Git<CR>
 nmap <leader>gc :GCheckout<CR>
-nmap <leader>cc :Gcommit<CR>
+nmap <leader>cc :Git commit<CR>
+
+tnoremap <F13> <C-\><C-n>
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
