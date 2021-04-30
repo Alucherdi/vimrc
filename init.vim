@@ -82,23 +82,24 @@ call plug#begin('~/.vim/plugged')
 
     " :T are you fucking kidding me
     Plug 'wakatime/vim-wakatime'
+
+    " Indent guide lines
+    Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 call plug#end()
 
 runtime coc.vim
 
 " Themes
-
 set termguicolors
 set background=dark
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_disable_italic_comment = 1
-" hi Normal guibg=NONE ctermbg=NONE
 
 colorscheme gruvbox-material
 
-let g:dart_style_guide=2
+let g:dart_style_guide = 2
 
-let mapleader=" "
+let mapleader = " "
 
 " Movement improved in split
 nmap <C-h> <C-w>h
@@ -106,44 +107,10 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-" Telescope configuration
-
-lua << EOF
-local actions = require("telescope.actions")
-require("telescope").setup{
-    defaults = {
-        file_sorter = require("telescope.sorters").get_fzy_sorter,
-        prompt_position = "top",
-        prompt_prefix = "",
-        sorting_strategy = "ascending",
-        shorten_path = true,
-        color_devicons = true,
-        preview_cutoff = 0,
-        set_env = { ['COLORTERM'] = 'truecolor' },
-
-        file_previewer   = require("telescope.previewers").vim_buffer_cat.new,
-        grep_previewer   = require("telescope.previewers").vim_buffer_vimgrep.new,
-        qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-
-        mappings = {
-            i = {
-                ["<C-x>"] = false,
-                ["<C-q>"] = actions.send_to_qflist,
-            }
-        },
-    },
-    extensions = {
-        fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true
-        }
-    }
-}
-EOF
+lua require("alucherdi")
 
 nmap <C-p> :Telescope find_files find_command=rg,--ignore,--files<CR>
-nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-
+nmap <C-f> :Telescope live_grep<CR>
 
 "Sweet Sweet FuGITive
 nmap <leader>gj :diffget //3<CR>
