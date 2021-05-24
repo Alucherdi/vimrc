@@ -13,7 +13,7 @@ set expandtab
 set smartindent
 
 set nu
-set nowrap
+" set nowrap
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -33,6 +33,8 @@ set laststatus=2
 " Dont be akward vim, please.
 set splitbelow
 set splitright
+
+set cursorline
 
 set signcolumn=yes
 set colorcolumn=80
@@ -64,7 +66,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
 
     Plug 'dart-lang/dart-vim-plugin'
-    Plug 'mbbill/undotree'
+    " Plug 'mbbill/undotree'
     Plug 'tpope/vim-fugitive'
 
     " God this is fkin awesome
@@ -81,11 +83,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'sainnhe/gruvbox-material'
 
     " :T are you fucking kidding me
-    Plug 'wakatime/vim-wakatime'
+    " Plug 'wakatime/vim-wakatime'
 
     " Indent guide lines
     Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 call plug#end()
+
+let g:airline_powerline_fonts = 1
 
 runtime coc.vim
 
@@ -98,6 +102,8 @@ let g:gruvbox_material_disable_italic_comment = 1
 colorscheme gruvbox-material
 
 let g:dart_style_guide = 2
+
+let g:indent_blankline_char = '│'
 
 let mapleader = " "
 
