@@ -13,7 +13,7 @@ set expandtab
 set smartindent
 
 set nu
-set nowrap
+" set nowrap
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -30,9 +30,14 @@ set shortmess+=c
 set encoding=utf-8
 set laststatus=2
 
+set cursorline
+
 " Dont be akward vim, please.
 set splitbelow
 set splitright
+
+" LSP shit
+set completeopt=menuone,noselect
 
 set signcolumn=yes
 set colorcolumn=80
@@ -42,6 +47,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " Change to 2 spaces for dart
 autocmd Filetype dart setlocal et ts=2 sw=2 sts=2
 autocmd Filetype yaml setlocal et ts=2 sw=2 sts=2
+autocmd Filetype java setlocal et ts=2 sw=2 sts=2
 
 set path+=**
 
@@ -59,12 +65,12 @@ let g:clipboard = {
       \ }
 
 call plug#begin('~/.vim/plugged')
-    " Idk how the fuck I was not using you
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
+    Plug 'kyazdani42/nvim-web-devicons'
+
     Plug 'dart-lang/dart-vim-plugin'
-    Plug 'mbbill/undotree'
     Plug 'tpope/vim-fugitive'
 
     " God this is fkin awesome
@@ -73,29 +79,29 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
+    " So, lets try lsp
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-compe'
+
     " autoshitplite
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'nvim-lua/lsp_extensions.nvim'
     Plug 'pangloss/vim-javascript'
 
+    Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'master'}
+
     " Themes
-    Plug 'sainnhe/gruvbox-material'
-
-    " :T are you fucking kidding me
-    Plug 'wakatime/vim-wakatime'
-
-    " Indent guide lines
-    Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
+    Plug 'franbach/miramare'
 call plug#end()
 
-runtime coc.vim
+let g:airline_powerline_fonts = 1
+let g:indent_blankline_char = '│'
 
 " Themes
-set termguicolors
-set background=dark
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_disable_italic_comment = 1
+if has('termguicolors')
+  set termguicolors
+endif
 
-colorscheme gruvbox-material
+colorscheme miramare
 
 let g:dart_style_guide = 2
 
