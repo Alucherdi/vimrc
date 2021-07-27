@@ -82,6 +82,8 @@ call plug#begin('~/.vim/plugged')
     " So, lets try lsp
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-compe'
+    Plug 'akinsho/flutter-tools.nvim'
+    Plug 'simrat39/rust-tools.nvim'
 
     " autoshitplite
     Plug 'nvim-lua/lsp_extensions.nvim'
