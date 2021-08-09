@@ -49,6 +49,8 @@ autocmd Filetype dart setlocal et ts=2 sw=2 sts=2
 autocmd Filetype yaml setlocal et ts=2 sw=2 sts=2
 autocmd Filetype java setlocal et ts=2 sw=2 sts=2
 
+set guifont=Jetbrains\ Mono\ :h16
+
 set path+=**
 
 let g:clipboard = {
@@ -78,12 +80,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
+    Plug 'nvim-telescope/telescope-project.nvim'
 
     " So, lets try lsp
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/nvim-compe'
-    Plug 'akinsho/flutter-tools.nvim'
-    Plug 'simrat39/rust-tools.nvim'
 
     " autoshitplite
     Plug 'nvim-lua/lsp_extensions.nvim'
@@ -94,6 +95,12 @@ call plug#begin('~/.vim/plugged')
     " Themes
     Plug 'franbach/miramare'
 call plug#end()
+
+" Some usefull shit that make totally sense
+nnoremap Y y$
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
 
 let g:airline_powerline_fonts = 1
 let g:indent_blankline_char = '│'
@@ -115,10 +122,15 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
+" Compe utilities
+inoremap <silent><expr> <CR> compe#confirm('<CR>')
+
 lua require("alucherdi")
 
 nmap <C-p> :Telescope find_files find_command=rg,--ignore,--files<CR>
 nmap <C-f> :Telescope live_grep<CR>
+nmap <leader>r :lua require'telescope'.extensions.project.project{}<CR>
+nmap <C-e> :Telescope file_browser<CR>
 
 "Sweet Sweet FuGITive
 nmap <leader>gj :diffget //3<CR>
