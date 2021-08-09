@@ -34,4 +34,4 @@ end
 -- javascript (node)
 nvim_lsp.tsserver.setup { on_attach = on_attach }
 nvim_lsp.dartls.setup { on_attach = on_attach }
-nvim_lsp.rust_analyzer.setup { rn_attach = on_attach }
+nvim_lsp.rust_analyzer.setup { on_attach = on_attach }

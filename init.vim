@@ -132,7 +132,12 @@ nmap <C-f> :Telescope live_grep<CR>
 nmap <leader>r :lua require'telescope'.extensions.project.project{}<CR>
 nmap <C-e> :Telescope file_browser<CR>
 
-"Sweet Sweet FuGITive
+" netrw
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_winsize = 18
+
+" Sweet Sweet FuGITive
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :Git<CR>
