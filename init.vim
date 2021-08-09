@@ -13,7 +13,7 @@ set expandtab
 set smartindent
 
 set nu
-" set nowrap
+set nowrap
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -43,7 +43,6 @@ set signcolumn=yes
 set colorcolumn=80
 set ic
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-
 " Change to 2 spaces for dart
 autocmd Filetype dart setlocal et ts=2 sw=2 sts=2
 autocmd Filetype yaml setlocal et ts=2 sw=2 sts=2
@@ -90,7 +89,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-lua/lsp_extensions.nvim'
     Plug 'pangloss/vim-javascript'
 
-    Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'master'}
+    Plug 'lukas-reineke/indent-blankline.nvim'
 
     " Themes
     Plug 'franbach/miramare'
@@ -103,7 +102,6 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 
 let g:airline_powerline_fonts = 1
-let g:indent_blankline_char = '│'
 
 " Themes
 if has('termguicolors')
@@ -130,7 +128,7 @@ lua require("alucherdi")
 nmap <C-p> :Telescope find_files find_command=rg,--ignore,--files<CR>
 nmap <C-f> :Telescope live_grep<CR>
 nmap <leader>r :lua require'telescope'.extensions.project.project{}<CR>
-nmap <C-e> :Telescope file_browser<CR>
+nmap <C-e> :Vex<CR>
 
 " netrw
 let g:netrw_liststyle = 3
