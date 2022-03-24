@@ -1,5 +1,7 @@
 local nvim_lsp = require('lspconfig')
 
+local util = require('lspconfig/util')
+
 local on_attach = function(client)
   print('Attaching to ' .. client.name)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -16,7 +18,7 @@ local on_attach = function(client)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<space>k', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
@@ -33,5 +35,10 @@ end
 
 -- javascript (node)
 nvim_lsp.tsserver.setup { on_attach = on_attach }
-nvim_lsp.dartls.setup { on_attach = on_attach }
+nvim_lsp.jdtls.setup { on_attach = on_attach }
+nvim_lsp.dartls.setup {
+    on_attach = on_attach,
+    root_dir = util.root_pattern("pubspec.yaml", "*.dart", "main.dart")
+}
 nvim_lsp.rust_analyzer.setup { on_attach = on_attach }
+nvim_lsp.clangd.setup { on_attach = on_attach }

@@ -46,7 +46,6 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " Change to 2 spaces for dart
 autocmd Filetype dart setlocal et ts=2 sw=2 sts=2
 autocmd Filetype yaml setlocal et ts=2 sw=2 sts=2
-autocmd Filetype java setlocal et ts=2 sw=2 sts=2
 
 set guifont=Jetbrains\ Mono\ :h16
 
@@ -93,7 +92,10 @@ call plug#begin('~/.vim/plugged')
 
     " Themes
     Plug 'franbach/miramare'
+    Plug 'sainnhe/everforest'
 call plug#end()
+" Lets do some terminal-emulator config shit
+tnoremap <Esc> <C-\><C-n>
 
 " Some usefull shit that make totally sense
 nnoremap Y y$
@@ -108,7 +110,9 @@ if has('termguicolors')
   set termguicolors
 endif
 
-colorscheme miramare
+set background=dark
+let g:everforest_background = 'hard'
+colorscheme everforest
 
 let g:dart_style_guide = 2
 
