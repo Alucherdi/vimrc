@@ -46,6 +46,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " Change to 2 spaces for dart
 autocmd Filetype dart setlocal et ts=2 sw=2 sts=2
 autocmd Filetype yaml setlocal et ts=2 sw=2 sts=2
+" autocmd Filetype java setlocal et ts=2 sw=2 sts=2
 
 set guifont=Jetbrains\ Mono\ :h16
 
@@ -79,6 +80,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
     Plug 'nvim-telescope/telescope-project.nvim'
+    Plug 'tpope/vim-vinegar'
 
     " So, lets try lsp
     Plug 'neovim/nvim-lspconfig'
@@ -93,6 +95,7 @@ call plug#begin('~/.vim/plugged')
     " Themes
     Plug 'franbach/miramare'
     Plug 'sainnhe/everforest'
+    Plug 'sainnhe/gruvbox-material'
 call plug#end()
 " Lets do some terminal-emulator config shit
 tnoremap <Esc> <C-\><C-n>
@@ -110,24 +113,20 @@ if has('termguicolors')
   set termguicolors
 endif
 
-set background=dark
 let g:everforest_background = 'hard'
-colorscheme everforest
+set background=dark
+colorscheme gruvbox-material
 
 let g:dart_style_guide = 2
 
 let mapleader = " "
 
-" Movement improved in split
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-
 " Compe utilities
 inoremap <silent><expr> <CR> compe#confirm('<CR>')
 
 lua require("alucherdi")
+
+let g:lsp_diagnostics_echo_cursor = 1
 
 nmap <C-p> :Telescope find_files find_command=rg,--ignore,--files<CR>
 nmap <C-f> :Telescope live_grep<CR>
@@ -144,6 +143,12 @@ nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :Git<CR>
 nmap <leader>cc :Git commit<CR>
+
+" Movement improved in split
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 augroup highlight_yank
     autocmd!
