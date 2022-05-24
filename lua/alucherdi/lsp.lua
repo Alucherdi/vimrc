@@ -2,13 +2,12 @@ local nvim_lsp = require('lspconfig')
 
 local util = require('lspconfig/util')
 
-local on_attach = function(client)
+local on_attach = function(client, bufnr)
   print('Attaching to ' .. client.name)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   --Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   local opts = { noremap = true, silent = true }
