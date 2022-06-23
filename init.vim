@@ -96,6 +96,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'franbach/miramare'
     Plug 'sainnhe/everforest'
     Plug 'sainnhe/gruvbox-material'
+    Plug 'danishprakash/vim-yami'
+    Plug 'arcticicestudio/nord-vim'
 call plug#end()
 " Lets do some terminal-emulator config shit
 tnoremap <Esc> <C-\><C-n>
@@ -107,7 +109,6 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 
 let g:airline_powerline_fonts = 1
-
 " Themes
 if has('termguicolors')
   set termguicolors
@@ -115,7 +116,7 @@ endif
 
 let g:everforest_background = 'hard'
 set background=dark
-colorscheme gruvbox-material
+colorscheme everforest
 
 let g:dart_style_guide = 2
 
