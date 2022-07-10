@@ -29,7 +29,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'g-', vsgd, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+    --vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
     vim.keymap.set('n', '<space>wl', function()
@@ -46,10 +46,8 @@ end
 nvim_lsp.tsserver.setup { on_attach = on_attach }
 nvim_lsp.html.setup { on_attach = on_attach }
 nvim_lsp.cssls.setup { on_attach = on_attach }
-nvim_lsp.emmet_ls.setup {
-    on_attach = on_attach,
-    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
-}
+nvim_lsp.volar.setup { on_attach = on_attach }
+nvim_lsp.emmet_ls.setup { on_attach = on_attach }
 
 nvim_lsp.jdtls.setup { on_attach = on_attach }
 nvim_lsp.dartls.setup {

@@ -46,6 +46,10 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " Change to 2 spaces for dart
 autocmd Filetype dart setlocal et ts=2 sw=2 sts=2
 autocmd Filetype yaml setlocal et ts=2 sw=2 sts=2
+autocmd Filetype javascript setlocal et ts=2 sw=2 sts=2
+autocmd Filetype vue setlocal et ts=2 sw=2 sts=2
+autocmd Filetype html setlocal et ts=2 sw=2 sts=2
+autocmd Filetype css setlocal et ts=2 sw=2 sts=2
 " autocmd Filetype java setlocal et ts=2 sw=2 sts=2
 
 set guifont=Jetbrains\ Mono\ :h16
