@@ -46,7 +46,16 @@ end
 nvim_lsp.tsserver.setup { on_attach = on_attach }
 nvim_lsp.html.setup { on_attach = on_attach }
 nvim_lsp.cssls.setup { on_attach = on_attach }
-nvim_lsp.volar.setup { on_attach = on_attach }
+nvim_lsp.volar.setup {
+    on_attach = on_attach,
+    require'lspconfig'.volar.setup{
+      init_options = {
+        typescript = {
+          serverPath = '/usr/local/lib/node_modules/typescript/lib/tsserverlibrary.js'
+        }
+      }
+    }
+}
 nvim_lsp.emmet_ls.setup { on_attach = on_attach }
 
 nvim_lsp.jdtls.setup { on_attach = on_attach }
