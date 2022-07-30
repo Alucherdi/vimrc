@@ -34,11 +34,6 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 lua require("alucherdi")
-"
-""
-"
-"'
-""
 
 augroup highlight_yank
     autocmd!
