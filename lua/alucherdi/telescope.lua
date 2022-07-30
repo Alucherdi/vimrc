@@ -10,7 +10,7 @@ require("telescope").setup {
             "--column",
             "--smart-case",
         },
-        prompt_prefix = " ",
+        prompt_prefix = ">",
         selection_caret = "  ",
         entry_prefix = "  ",
         initial_mode = "insert",
@@ -31,12 +31,12 @@ require("telescope").setup {
             preview_cutoff = 120,
         },
         file_sorter = require("telescope.sorters").get_fuzzy_file,
-        file_ignore_patterns = { "node_modules" },
+        file_ignore_patterns = { "node_modules", "build" },
         generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
         path_display = { "truncate" },
         winblend = 0,
         border = {},
-        borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+        borderchars = { "", "", "", "", "", "", "", "" },
         color_devicons = true,
         use_less = true,
         set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
@@ -45,13 +45,5 @@ require("telescope").setup {
         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
         -- Developer configurations: Not meant for general override
         buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
-    },
-    extensions = {
-        fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true
-        }
     }
 }
-
-require('telescope').load_extension('project')

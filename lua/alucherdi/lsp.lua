@@ -1,4 +1,4 @@
-local nvim_lsp = require('lspconfig')
+local lsp = require('lspconfig')
 
 local util = require('lspconfig/util')
 
@@ -42,36 +42,35 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 --css only
-local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 --/css
 
 -- javascript (node)
-nvim_lsp.tsserver.setup { on_attach = on_attach }
-nvim_lsp.html.setup { on_attach = on_attach }
-nvim_lsp.emmet_ls.setup { on_attach = on_attach }
-nvim_lsp.cssls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities
+lsp.tsserver.setup { on_attach = on_attach, capabilities = capabilities }
+lsp.html.setup { on_attach = on_attach, capabilities = capabilities }
+lsp.emmet_ls.setup { on_attach = on_attach, capabilities = capabilities }
+lsp.cssls.setup {
+    on_attach = on_attach, capabilities = capabilities
 }
-nvim_lsp.volar.setup {
-    on_attach = on_attach,
-    require'lspconfig'.volar.setup{
-      init_options = {
+lsp.volar.setup {
+    on_attach = on_attach, capabilities = capabilities,
+    init_options = {
         typescript = {
-          serverPath = '/usr/local/lib/node_modules/typescript/lib/tsserverlibrary.js'
+          serverPath = '/usr/lib/node_modules/typescript/lib/tsserverlibrary.js'
         }
-      }
     }
 }
 
-nvim_lsp.sumneko_lua.setup { on_attach = on_attach }
+lsp.sumneko_lua.setup { on_attach = on_attach, capabilities = capabilities }
 
-nvim_lsp.jdtls.setup { on_attach = on_attach }
-nvim_lsp.dartls.setup {
-    on_attach = on_attach,
+lsp.jdtls.setup { on_attach = on_attach, capabilities = capabilities }
+lsp.dartls.setup {
+    on_attach = on_attach, capabilities = capabilities,
     root_dir = util.root_pattern("pubspec.yaml", "*.dart", "main.dart")
 }
-nvim_lsp.rust_analyzer.setup { on_attach = on_attach }
-nvim_lsp.clangd.setup { on_attach = on_attach }
+lsp.rust_analyzer.setup { on_attach = on_attach, capabilities = capabilities }
+lsp.clangd.setup { on_attach = on_attach, capabilities = capabilities }
+
