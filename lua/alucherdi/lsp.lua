@@ -9,7 +9,7 @@ vim.keymap.set('n', ']g', vim.diagnostic.goto_next, nbopts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, nbopts)
 
 local on_attach = function(client, bufnr)
-    print('Attaching to: ' .. client.name)
+    --print('Attaching to: ' .. client.name)
 
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
