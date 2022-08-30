@@ -13,4 +13,3 @@ require("alucherdi.blankline")
 require'nvim-tree'.setup {}
 
 require("alucherdi.statusline")
-require("alucherdi.theme_gen")
