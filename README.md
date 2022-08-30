@@ -4,12 +4,13 @@ Dependencies:
 * fd
 * ripgrep
 * xclip (dep in os)
+* nerdfont
 
 Package manager:
 
 * packer
 
-Langauges in lsp:
+Langauges in lsp / tsitter:
 
 c / c++
 rust

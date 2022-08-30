@@ -8,7 +8,8 @@ local integrations = {
     "git",
     "treesitter",
     "cmp",
-    "telescope"
+    "telescope",
+    "statusline",
 }
 
 for _,integration in ipairs(integrations) do

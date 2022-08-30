@@ -8,31 +8,31 @@ local sep_l = separators["left"]
 local sep_r = separators["right"]
 
 local modes = {
-    ["n"] = { "NORMAL", "St_NormalMode" },
-    ["niI"] = { "NORMAL i", "St_NormalMode" },
-    ["niR"] = { "NORMAL r", "St_NormalMode" },
-    ["niV"] = { "NORMAL v", "St_NormalMode" },
-    ["no"] = { "N-PENDING", "St_NormalMode" },
-    ["i"] = { "INSERT", "St_InsertMode" },
-    ["ic"] = { "INSERT", "St_InsertMode" },
-    ["ix"] = { "INSERT completion", "St_InsertMode" },
-    ["t"] = { "TERMINAL", "St_TerminalMode" },
-    ["nt"] = { "NTERMINAL", "St_NTerminalMode" },
-    ["v"] = { "VISUAL", "St_VisualMode" },
-    ["V"] = { "V-LINE", "St_VisualMode" },
-    [""] = { "V-BLOCK", "St_VisualMode" },
-    ["R"] = { "REPLACE", "St_ReplaceMode" },
-    ["Rv"] = { "V-REPLACE", "St_ReplaceMode" },
-    ["s"] = { "SELECT", "St_SelectMode" },
-    ["S"] = { "S-LINE", "St_SelectMode" },
-    [""] = { "S-BLOCK", "St_SelectMode" },
-    ["c"] = { "COMMAND", "St_CommandMode" },
-    ["cv"] = { "COMMAND", "St_CommandMode" },
-    ["ce"] = { "COMMAND", "St_CommandMode" },
-    ["r"] = { "PROMPT", "St_ConfirmMode" },
-    ["rm"] = { "MORE", "St_ConfirmMode" },
-    ["r?"] = { "CONFIRM", "St_ConfirmMode" },
-    ["!"] = { "SHELL", "St_TerminalMode" },
+    ["n"]   = { "N ", "St_NormalMode" },
+    ["niI"] = { "N i ", "St_NormalMode" },
+    ["niR"] = { "N r ", "St_NormalMode" },
+    ["niV"] = { "N v ", "St_NormalMode" },
+    ["no"]  = { "N-P ", "St_NormalMode" },
+    ["i"]   = { "I ", "St_InsertMode" },
+    ["ic"]  = { "I ", "St_InsertMode" },
+    ["ix"]  = { "I completion ", "St_InsertMode" },
+    ["t"]   = { "T ", "St_TerminalMode" },
+    ["nt"]  = { "NT ", "St_NTerminalMode" },
+    ["v"]   = { "V ", "St_VisualMode" },
+    ["V"]   = { "V-L ", "St_VisualMode" },
+    [""]  = { "V-B ", "St_VisualMode" },
+    ["R"]   = { "R ", "St_ReplaceMode" },
+    ["Rv"]  = { "V-R ", "St_ReplaceMode" },
+    ["s"]   = { "S ", "St_SelectMode" },
+    ["S"]   = { "S-L ", "St_SelectMode" },
+    [""]  = { "S-B ", "St_SelectMode" },
+    ["c"]   = { "C ", "St_CommandMode" },
+    ["cv"]  = { "C ", "St_CommandMode" },
+    ["ce"]  = { "C ", "St_CommandMode" },
+    ["r"]   = { "P ", "St_ConfirmMode" },
+    ["rm"]  = { "M ", "St_ConfirmMode" },
+    ["r?"]  = { "CONFIRM ", "St_ConfirmMode" },
+    ["!"]   = { "SHELL ", "St_TerminalMode" },
 }
 
 local M = {}
@@ -47,7 +47,8 @@ end
 
 M.fileInfo = function()
     local icon = "  "
-    local filename = (fn.expand "%" == "" and "Empty ") or fn.expand "%:t"
+    local filename = (fn.expand "%" == "" and "Empty ")
+        or fn.expand "%"
 
     if filename ~= "Empty " then
         local devicons_present, devicons = pcall(require, "nvim-web-devicons")
@@ -123,7 +124,7 @@ M.LSP_status = function()
     if rawget(vim, "lsp") then
         for _, client in ipairs(vim.lsp.get_active_clients()) do
             if client.attached_buffers[vim.api.nvim_get_current_buf()] then
-                return (vim.o.columns > 100 and "%#St_LspStatus#" .. "   LSP ~ " .. client.name .. " ") or "   LSP "
+                return (vim.o.columns > 100 and "%#St_LspStatus#" .. "   " .. client.name .. " ") or "   LSP "
             end
         end
     end

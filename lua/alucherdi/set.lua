@@ -21,8 +21,9 @@ set.swapfile = false
 set.backup   = false
 set.wrap     = false
 
+
 set.undofile = true
-set.undodir  = '/home/alucherdi/.vim/undodir'
+set.undodir  = vim.fn.expand '~/.vim/undodir'
 
 set.termguicolors = true
 
@@ -35,7 +36,7 @@ set.cmdheight  = 2
 set.shortmess  = 'A'
 
 set.encoding   = 'utf-8'
-set.laststatus = 2
+set.laststatus = 3
 
 
 set.splitbelow = true
