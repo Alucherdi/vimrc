@@ -94,11 +94,6 @@ _G.packer_plugins = {
     path = "/home/alucherdi/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
-  everforest = {
-    loaded = true,
-    path = "/home/alucherdi/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/alucherdi/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",

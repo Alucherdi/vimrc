@@ -1,4 +1,4 @@
-local g = vim.g
+--[[local g = vim.g
 
 g.everforest_background = 'hard'
 
@@ -12,3 +12,4 @@ vim.api.nvim_set_hl(0, "TelescopeBorder", {
     fg="#22292e",
     bg="#22292e"
 })
+]]--

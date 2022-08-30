@@ -2,6 +2,7 @@ local set = vim.opt
 local cmd = vim.cmd
 
 set.relativenumber = true
+set.cursorline     = true
 set.number         = true
 set.nu             = true
 
@@ -36,7 +37,6 @@ set.shortmess  = 'A'
 set.encoding   = 'utf-8'
 set.laststatus = 2
 
-set.cursorline = true
 
 set.splitbelow = true
 set.splitright = true

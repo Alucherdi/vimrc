@@ -1,5 +1,4 @@
 require("alucherdi.packer")
-
 require("alucherdi.treesitter")
 
 require("alucherdi.set")
@@ -11,5 +10,6 @@ require("alucherdi.telescope")
 require("alucherdi.blankline")
 
 require'nvim-tree'.setup {}
-
 require("alucherdi.statusline")
+
+require("alucherdi.colorscheme")
