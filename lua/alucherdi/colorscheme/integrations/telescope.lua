@@ -1,55 +1,57 @@
-local colors = require("alucherdi.colorscheme.themes.gruvbox").base_30
+return function(theme)
+    local colors = theme.base_30
 
-return {
+    return {
 
-    TelescopeBorder = {
-        fg = colors.darker_black,
-        bg = colors.darker_black,
-    },
+        TelescopeBorder = {
+            fg = colors.darker_black,
+            bg = colors.darker_black,
+        },
 
-    TelescopePromptBorder = {
-        fg = colors.black2,
-        bg = colors.black2,
-    },
+        TelescopePromptBorder = {
+            fg = colors.black2,
+            bg = colors.black2,
+        },
 
-    TelescopePromptNormal = {
-        fg = colors.white,
-        bg = colors.black2,
-    },
+        TelescopePromptNormal = {
+            fg = colors.white,
+            bg = colors.black2,
+        },
 
-    TelescopePromptPrefix = {
-        fg = colors.red,
-        bg = colors.black2,
-    },
+        TelescopePromptPrefix = {
+            fg = colors.red,
+            bg = colors.black2,
+        },
 
-    TelescopeNormal = { bg = colors.darker_black },
+        TelescopeNormal = { bg = colors.darker_black },
 
-    --[[TelescopePreviewTitle = {
-        fg = colors.black,
-        bg = colors.green,
-    },]]--
+        --[[TelescopePreviewTitle = {
+            fg = colors.black,
+            bg = colors.green,
+        },]]--
 
-    TelescopePromptTitle = {
-        fg = colors.black2,
-        bg = colors.black2,
-    },
+        TelescopePromptTitle = {
+            fg = colors.black2,
+            bg = colors.black2,
+        },
 
-    TelescopeResultsTitle = {
-        fg = colors.darker_black,
-        bg = colors.darker_black,
-    },
+        TelescopeResultsTitle = {
+            fg = colors.darker_black,
+            bg = colors.darker_black,
+        },
 
-    TelescopeSelection = { bg = colors.black2, fg = colors.white },
+        TelescopeSelection = { bg = colors.black2, fg = colors.white },
 
-    TelescopeResultsDiffAdd = {
-        fg = colors.green,
-    },
+        TelescopeResultsDiffAdd = {
+            fg = colors.green,
+        },
 
-    TelescopeResultsDiffChange = {
-        fg = colors.yellow,
-    },
+        TelescopeResultsDiffChange = {
+            fg = colors.yellow,
+        },
 
-    TelescopeResultsDiffDelete = {
-        fg = colors.red,
-    },
-}
+        TelescopeResultsDiffDelete = {
+            fg = colors.red,
+        },
+    }
+end

@@ -1,118 +1,118 @@
-local theme = require("alucherdi.colorscheme.themes.gruvbox").base_16
+return function(theme)
+    local base16 = theme.base_16
 
--- Standard syntax highlighting
+    return {
+        Boolean = {
+            fg = base16.base09,
+        },
 
-return {
-    Boolean = {
-        fg = theme.base09,
-    },
+        Character = {
+            fg = base16.base08,
+        },
 
-    Character = {
-        fg = theme.base08,
-    },
+        Conditional = {
+            fg = base16.base0E,
+        },
 
-    Conditional = {
-        fg = theme.base0E,
-    },
+        Constant = {
+            fg = base16.base08,
+        },
 
-    Constant = {
-        fg = theme.base08,
-    },
+        Define = {
+            fg = base16.base0E,
+            sp = "none",
+        },
 
-    Define = {
-        fg = theme.base0E,
-        sp = "none",
-    },
+        Delimiter = {
+            fg = base16.base0F,
+        },
 
-    Delimiter = {
-        fg = theme.base0F,
-    },
+        Float = {
+            fg = base16.base09,
+        },
 
-    Float = {
-        fg = theme.base09,
-    },
+        Variable = {
+            fg = base16.base05,
+        },
 
-    Variable = {
-        fg = theme.base05,
-    },
+        Function = {
+            fg = base16.base0D,
+        },
 
-    Function = {
-        fg = theme.base0D,
-    },
+        Identifier = {
+            fg = base16.base08,
+            sp = "none",
+        },
 
-    Identifier = {
-        fg = theme.base08,
-        sp = "none",
-    },
+        Include = {
+            fg = base16.base0D,
+        },
 
-    Include = {
-        fg = theme.base0D,
-    },
+        Keyword = {
+            fg = base16.base0E,
+        },
 
-    Keyword = {
-        fg = theme.base0E,
-    },
+        Label = {
+            fg = base16.base0A,
+        },
 
-    Label = {
-        fg = theme.base0A,
-    },
+        Number = {
+            fg = base16.base09,
+        },
 
-    Number = {
-        fg = theme.base09,
-    },
+        Operator = {
+            fg = base16.base05,
+            sp = "none",
+        },
 
-    Operator = {
-        fg = theme.base05,
-        sp = "none",
-    },
+        PreProc = {
+            fg = base16.base0A,
+        },
 
-    PreProc = {
-        fg = theme.base0A,
-    },
+        Repeat = {
+            fg = base16.base0A,
+        },
 
-    Repeat = {
-        fg = theme.base0A,
-    },
+        Special = {
+            fg = base16.base0C,
+        },
 
-    Special = {
-        fg = theme.base0C,
-    },
+        SpecialChar = {
+            fg = base16.base0F,
+        },
 
-    SpecialChar = {
-        fg = theme.base0F,
-    },
+        Statement = {
+            fg = base16.base08,
+        },
 
-    Statement = {
-        fg = theme.base08,
-    },
+        StorageClass = {
+            fg = base16.base0A,
+        },
 
-    StorageClass = {
-        fg = theme.base0A,
-    },
+        String = {
+            fg = base16.base0B,
+        },
 
-    String = {
-        fg = theme.base0B,
-    },
+        Structure = {
+            fg = base16.base0E,
+        },
 
-    Structure = {
-        fg = theme.base0E,
-    },
+        Tag = {
+            fg = base16.base0A,
+        },
 
-    Tag = {
-        fg = theme.base0A,
-    },
+        Todo = {
+            fg = base16.base0A,
+            bg = base16.base01,
+        },
 
-    Todo = {
-        fg = theme.base0A,
-        bg = theme.base01,
-    },
+        Type = {
+            fg = base16.base0A,
+            sp = "none",
+        },
 
-    Type = {
-        fg = theme.base0A,
-        sp = "none",
-    },
-
-    Typedef = {
-        fg = theme.base0A,
-    },
-}
+        Typedef = {
+            fg = base16.base0A,
+        },
+    }
+end

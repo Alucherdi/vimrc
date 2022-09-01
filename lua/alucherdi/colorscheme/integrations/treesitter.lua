@@ -1,192 +1,194 @@
-local theme = require("alucherdi.colorscheme.themes.gruvbox").base_16
+return function(theme)
+    local base16 = theme.base_16
 
-return {
-    TSAnnotation = {
-        fg = theme.base0F,
-    },
+    return {
+        TSAnnotation = {
+            fg = base16.base0F,
+        },
 
-    TSAttribute = {
-        fg = theme.base0A,
-    },
+        TSAttribute = {
+            fg = base16.base0A,
+        },
 
-    TSTagAttribute = {
-        link = "TSProperty",
-    },
+        TSTagAttribute = {
+            link = "TSProperty",
+        },
 
-    TSCharacter = {
-        fg = theme.base08,
-    },
+        TSCharacter = {
+            fg = base16.base08,
+        },
 
-    TSConstructor = {
-        fg = theme.base0C,
-    },
+        TSConstructor = {
+            fg = base16.base0C,
+        },
 
-    TSConstBuiltin = {
-        fg = theme.base09,
-    },
+        TSConstBuiltin = {
+            fg = base16.base09,
+        },
 
-    TSConstMacro = {
-        fg = theme.base08,
-    },
+        TSConstMacro = {
+            fg = base16.base08,
+        },
 
-    TSError = {
-        fg = theme.base08,
-    },
+        TSError = {
+            fg = base16.base08,
+        },
 
-    TSException = {
-        fg = theme.base08,
-    },
+        TSException = {
+            fg = base16.base08,
+        },
 
-    TSFloat = {
-        fg = theme.base09,
-    },
+        TSFloat = {
+            fg = base16.base09,
+        },
 
-    TSKeyword = {
-        fg = theme.base0E,
-    },
+        TSKeyword = {
+            fg = base16.base0E,
+        },
 
-    TSKeywordFunction = {
-        fg = theme.base0E,
-    },
+        TSKeywordFunction = {
+            fg = base16.base0E,
+        },
 
-    TSKeywordReturn = {
-        fg = theme.base0E,
-    },
+        TSKeywordReturn = {
+            fg = base16.base0E,
+        },
 
-    TSFunction = {
-        fg = theme.base0D,
-    },
+        TSFunction = {
+            fg = base16.base0D,
+        },
 
-    TSFuncBuiltin = {
-        fg = theme.base0D,
-    },
+        TSFuncBuiltin = {
+            fg = base16.base0D,
+        },
 
-    TSFuncMacro = {
-        fg = theme.base08,
-    },
+        TSFuncMacro = {
+            fg = base16.base08,
+        },
 
-    TSKeywordOperator = {
-        fg = theme.base0E,
-    },
+        TSKeywordOperator = {
+            fg = base16.base0E,
+        },
 
-    TSMethod = {
-        fg = theme.base0D,
-    },
+        TSMethod = {
+            fg = base16.base0D,
+        },
 
-    TSNamespace = {
-        fg = theme.base08,
-    },
+        TSNamespace = {
+            fg = base16.base08,
+        },
 
-    TSNone = {
-        fg = theme.base05,
-    },
+        TSNone = {
+            fg = base16.base05,
+        },
 
-    TSParameter = {
-        fg = theme.base08,
-    },
+        TSParameter = {
+            fg = base16.base08,
+        },
 
-    TSParameterReference = {
-        fg = theme.base05,
-    },
+        TSParameterReference = {
+            fg = base16.base05,
+        },
 
-    TSPunctBracket = {
-        fg = theme.base0F,
-    },
+        TSPunctBracket = {
+            fg = base16.base0F,
+        },
 
-    TSPunctDelimiter = {
-        fg = theme.base0F,
-    },
+        TSPunctDelimiter = {
+            fg = base16.base0F,
+        },
 
-    TSPunctSpecial = {
-        fg = theme.base08,
-    },
+        TSPunctSpecial = {
+            fg = base16.base08,
+        },
 
-    TSStringRegex = {
-        fg = theme.base0C,
-    },
+        TSStringRegex = {
+            fg = base16.base0C,
+        },
 
-    TSStringEscape = {
-        fg = theme.base0C,
-    },
+        TSStringEscape = {
+            fg = base16.base0C,
+        },
 
-    TSSymbol = {
-        fg = theme.base0B,
-    },
+        TSSymbol = {
+            fg = base16.base0B,
+        },
 
-    TSTagDelimiter = {
-        fg = theme.base0F,
-    },
+        TSTagDelimiter = {
+            fg = base16.base0F,
+        },
 
-    TSText = {
-        fg = theme.base05,
-    },
+        TSText = {
+            fg = base16.base05,
+        },
 
-    TSStrong = {
-        bold = true,
-    },
+        TSStrong = {
+            bold = true,
+        },
 
-    TSEmphasis = {
-        fg = theme.base09,
-    },
+        TSEmphasis = {
+            fg = base16.base09,
+        },
 
-    TSStrike = {
-        fg = theme.base00,
-        strikethrough = true,
-    },
+        TSStrike = {
+            fg = base16.base00,
+            strikethrough = true,
+        },
 
-    TSLiteral = {
-        fg = theme.base09,
-    },
+        TSLiteral = {
+            fg = base16.base09,
+        },
 
-    TSURI = {
-        fg = theme.base09,
+        TSURI = {
+            fg = base16.base09,
 
-        underline = true,
-    },
+            underline = true,
+        },
 
-    TSTypeBuiltin = {
-        fg = theme.base0A,
-    },
+        TSTypeBuiltin = {
+            fg = base16.base0A,
+        },
 
-    TSVariableBuiltin = {
-        fg = theme.base09,
-    },
+        TSVariableBuiltin = {
+            fg = base16.base09,
+        },
 
-    TSVariable = {
-        fg = theme.base05,
-    },
+        TSVariable = {
+            fg = base16.base05,
+        },
 
-    TSDefinition = {
-        sp = theme.base04,
-        underline = true,
-    },
+        TSDefinition = {
+            sp = base16.base04,
+            underline = true,
+        },
 
-    TSDefinitionUsage = {
-        sp = theme.base04,
-        underline = true,
-    },
+        TSDefinitionUsage = {
+            sp = base16.base04,
+            underline = true,
+        },
 
-    TSCurrentScope = {
-        bold = true,
-    },
+        TSCurrentScope = {
+            bold = true,
+        },
 
-    luaTSField = {
-        fg = theme.base0D,
-    },
+        luaTSField = {
+            fg = base16.base0D,
+        },
 
-    TSFieldKey = {
-        fg = theme.base08,
-    },
+        TSFieldKey = {
+            fg = base16.base08,
+        },
 
-    TSProperty = {
-        fg = theme.base08,
-    },
+        TSProperty = {
+            fg = base16.base08,
+        },
 
-    TSInclude = {
-        link = "Include",
-    },
+        TSInclude = {
+            link = "Include",
+        },
 
-    TSConditional = {
-        link = "Conditional",
-    },
-}
+        TSConditional = {
+            link = "Conditional",
+        },
+    }
+end

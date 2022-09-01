@@ -8,6 +8,7 @@ require("alucherdi.lsp")
 require("alucherdi.compe")
 require("alucherdi.telescope")
 require("alucherdi.blankline")
+require("alucherdi.autocmds")
 
 require'nvim-tree'.setup {}
 require("alucherdi.statusline")

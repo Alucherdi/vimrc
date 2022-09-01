@@ -131,20 +131,17 @@ M.LSP_status = function()
 end
 
 M.cwd = function()
-    local dir_icon = "%#St_cwd_icon#" .. " "
+    local dir_icon = "%#St_cwd_icon#" .. "  "
     local dir_name = "%#St_cwd_text#" .. " " .. fn.fnamemodify(fn.getcwd(), ":t") .. " "
-    return (vim.o.columns > 85 and ("%#St_cwd_sep#" .. sep_l .. dir_icon .. dir_name)) or ""
+    return (vim.o.columns > 85 and ("%#St_cwd_sep#"  .. dir_icon .. dir_name)) or ""
 end
 
 M.cursor_position = function()
-    local left_sep = "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon#" .. " "
+    local left_sep = "%#St_pos_sep#" .. "%#St_pos_icon#" .. "  "
 
     local current_line = fn.line "."
     local total_line = fn.line "$"
     local text = math.modf((current_line / total_line) * 100) .. tostring "%%"
-
-    text = (current_line == 1 and "Top") or text
-    text = (current_line == total_line and "Bot") or text
 
     return left_sep .. "%#St_pos_text#" .. " " .. text .. " "
 end

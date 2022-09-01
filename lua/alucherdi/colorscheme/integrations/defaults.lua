@@ -1,209 +1,210 @@
-local colors = require("alucherdi.colorscheme.themes.gruvbox").base_30
-local theme = require("alucherdi.colorscheme.themes.gruvbox").base_16
+return function(theme)
+    local colors = theme.base_30
+    local base16 = theme.base_16
 
-local defaults = {
-    MatchWord = {
-        bg = colors.grey,
-        fg = colors.white,
-    },
+    return {
+        MatchWord = {
+            bg = colors.grey,
+            fg = colors.white,
+        },
 
-    Pmenu = { bg = colors.one_bg },
-    PmenuSbar = { bg = colors.one_bg },
-    PmenuSel = { bg = colors.pmenu_bg, fg = colors.black },
-    PmenuThumb = { bg = colors.grey },
+        Pmenu = { bg = colors.one_bg },
+        PmenuSbar = { bg = colors.one_bg },
+        PmenuSel = { bg = colors.pmenu_bg, fg = colors.black },
+        PmenuThumb = { bg = colors.grey },
 
-    MatchParen = { link = "MatchWord" },
+        MatchParen = { link = "MatchWord" },
 
-    Comment = { fg = colors.grey_fg },
+        Comment = { fg = colors.grey_fg },
 
-    CursorLineNr = { fg = colors.white },
-    LineNr       = { fg = colors.grey },
+        CursorLineNr = { fg = colors.white },
+        LineNr       = { fg = colors.grey },
 
-    -- floating windows
-    FloatBorder = { fg = colors.blue },
-    NormalFloat = { bg = colors.darker_black },
+        -- floating windows
+        FloatBorder = { fg = colors.blue },
+        NormalFloat = { bg = colors.darker_black },
 
-    NvimInternalError = { fg = colors.red },
-    WinSeparator = { fg = colors.line },
+        NvimInternalError = { fg = colors.red },
+        WinSeparator = { fg = colors.line },
 
-    -- packer
-    PackerPackageName = { fg = colors.red },
-    PackerSuccess = { fg = colors.green },
-    PackerStatusSuccess = { fg = theme.base08 },
-    PackerStatusCommit = { fg = colors.blue },
-    PackeProgress = { fg = colors.blue },
-    PackerOutput = { fg = colors.red },
-    PackerStatus = { fg = colors.blue },
-    PackerHash = { fg = colors.blue },
+        -- packer
+        PackerPackageName = { fg = colors.red },
+        PackerSuccess = { fg = colors.green },
+        PackerStatusSuccess = { fg = base16.base08 },
+        PackerStatusCommit = { fg = colors.blue },
+        PackeProgress = { fg = colors.blue },
+        PackerOutput = { fg = colors.red },
+        PackerStatus = { fg = colors.blue },
+        PackerHash = { fg = colors.blue },
 
-    Normal = {
-        fg = theme.base05,
-        bg = theme.base00,
-    },
+        Normal = {
+            fg = base16.base05,
+            bg = base16.base00,
+        },
 
-    Bold = {
-        bold = true,
-    },
+        Bold = {
+            bold = true,
+        },
 
-    Debug = {
-        fg = theme.base08,
-    },
+        Debug = {
+            fg = base16.base08,
+        },
 
-    Directory = {
-        fg = theme.base0D,
-    },
+        Directory = {
+            fg = base16.base0D,
+        },
 
-    Error = {
-        fg = theme.base00,
-        bg = theme.base08,
-    },
+        Error = {
+            fg = base16.base00,
+            bg = base16.base08,
+        },
 
-    ErrorMsg = {
-        fg = theme.base08,
-        bg = theme.base00,
-    },
+        ErrorMsg = {
+            fg = base16.base08,
+            bg = base16.base00,
+        },
 
-    Exception = {
-        fg = theme.base08,
-    },
+        Exception = {
+            fg = base16.base08,
+        },
 
-    FoldColumn = {
-        fg = theme.base0C,
-        bg = theme.base01,
-    },
+        FoldColumn = {
+            fg = base16.base0C,
+            bg = base16.base01,
+        },
 
-    Folded = {
-        fg = theme.base03,
-        bg = theme.base01,
-    },
+        Folded = {
+            fg = base16.base03,
+            bg = base16.base01,
+        },
 
-    IncSearch = {
-        fg = theme.base01,
-        bg = theme.base09,
-    },
+        IncSearch = {
+            fg = base16.base01,
+            bg = base16.base09,
+        },
 
-    Italic = {
-        italic = true,
-    },
+        Italic = {
+            italic = true,
+        },
 
-    Macro = {
-        fg = theme.base08,
-    },
+        Macro = {
+            fg = base16.base08,
+        },
 
-    ModeMsg = {
-        fg = theme.base0B,
-    },
+        ModeMsg = {
+            fg = base16.base0B,
+        },
 
-    MoreMsg = {
-        fg = theme.base0B,
-    },
+        MoreMsg = {
+            fg = base16.base0B,
+        },
 
-    Question = {
-        fg = theme.base0D,
-    },
+        Question = {
+            fg = base16.base0D,
+        },
 
-    Search = {
-        fg = theme.base01,
-        bg = theme.base0A,
-    },
+        Search = {
+            fg = base16.base01,
+            bg = base16.base0A,
+        },
 
-    Substitute = {
-        fg = theme.base01,
-        bg = theme.base0A,
-        sp = "none",
-    },
+        Substitute = {
+            fg = base16.base01,
+            bg = base16.base0A,
+            sp = "none",
+        },
 
-    SpecialKey = {
-        fg = theme.base03,
-    },
+        SpecialKey = {
+            fg = base16.base03,
+        },
 
-    TooLong = {
-        fg = theme.base08,
-    },
+        TooLong = {
+            fg = base16.base08,
+        },
 
-    UnderLined = {
-        fg = theme.base0B,
-    },
+        UnderLined = {
+            fg = base16.base0B,
+        },
 
-    Visual = {
-        bg = theme.base02,
-    },
+        Visual = {
+            bg = base16.base02,
+        },
 
-    VisualNOS = {
-        fg = theme.base08,
-    },
+        VisualNOS = {
+            fg = base16.base08,
+        },
 
-    WarningMsg = {
-        fg = theme.base08,
-    },
+        WarningMsg = {
+            fg = base16.base08,
+        },
 
-    WildMenu = {
-        fg = theme.base08,
-        bg = theme.base0A,
-    },
+        WildMenu = {
+            fg = base16.base08,
+            bg = base16.base0A,
+        },
 
-    Title = {
-        fg = theme.base0D,
-        sp = "none",
-    },
+        Title = {
+            fg = base16.base0D,
+            sp = "none",
+        },
 
-    Conceal = {
-        bg = "NONE",
-    },
+        Conceal = {
+            bg = "NONE",
+        },
 
-    Cursor = {
-        fg = theme.base00,
-        bg = theme.base05,
-    },
+        Cursor = {
+            fg = base16.base00,
+            bg = base16.base05,
+        },
 
-    NonText = {
-        fg = theme.base03,
-    },
+        NonText = {
+            fg = base16.base03,
+        },
 
-    SignColumn = {
-        fg = theme.base03,
-        sp = "NONE",
-    },
+        SignColumn = {
+            fg = base16.base03,
+            sp = "NONE",
+        },
 
-    ColorColumn = {
-        bg = theme.base01,
-        sp = "none",
-    },
+        ColorColumn = {
+            bg = base16.base01,
+            sp = "none",
+        },
 
-    CursorColumn = {
-        bg = theme.base01,
-        sp = "none",
-    },
+        CursorColumn = {
+            bg = base16.base01,
+            sp = "none",
+        },
 
-    CursorLine = {
-        bg = "none",
-        sp = "none",
-    },
+        CursorLine = {
+            bg = "none",
+            sp = "none",
+        },
 
-    QuickFixLine = {
-        bg = theme.base01,
-        sp = "none",
-    },
+        QuickFixLine = {
+            bg = base16.base01,
+            sp = "none",
+        },
 
-    -- spell
-    SpellBad = {
-        undercurl = true,
-        sp = theme.base08,
-    },
+        -- spell
+        SpellBad = {
+            undercurl = true,
+            sp = base16.base08,
+        },
 
-    SpellLocal = {
-        undercurl = true,
-        sp = theme.base0C,
-    },
+        SpellLocal = {
+            undercurl = true,
+            sp = base16.base0C,
+        },
 
-    SpellCap = {
-        undercurl = true,
-        sp = theme.base0D,
-    },
+        SpellCap = {
+            undercurl = true,
+            sp = base16.base0D,
+        },
 
-    SpellRare = {
-        undercurl = true,
-        sp = theme.base0E,
-    },
-}
-return defaults
+        SpellRare = {
+            undercurl = true,
+            sp = base16.base0E,
+        },
+    }
+end
