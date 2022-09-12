@@ -10,7 +10,7 @@ require("alucherdi.telescope")
 require("alucherdi.blankline")
 require("alucherdi.autocmds")
 
-require'nvim-tree'.setup {}
+require("alucherdi.nvimtree")
 require("alucherdi.statusline")
 
 require("alucherdi.colorscheme")
