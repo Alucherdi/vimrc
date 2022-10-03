@@ -62,6 +62,9 @@ lsp.volar.setup {
     }
 }
 
+lsp.hls.setup { on_attach = on_attach, capabilities = capabilities }
+lsp.gdscript.setup { on_attach = on_attach, capabilities = capabilities }
+
 lsp.sumneko_lua.setup { on_attach = on_attach, capabilities = capabilities }
 
 lsp.jdtls.setup { on_attach = on_attach, capabilities = capabilities }
