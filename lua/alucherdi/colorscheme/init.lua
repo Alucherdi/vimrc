@@ -14,7 +14,7 @@ local integrations = {
 
 for _,integration in ipairs(integrations) do
     local theme = require("alucherdi.colorscheme.themes.selector")
-        .select("cosmicmafia")
+        .select(THEME)
 
     local loaded = require(
         "alucherdi.colorscheme.integrations." .. integration)(theme)

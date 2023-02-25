@@ -48,7 +48,7 @@ end
 M.fileInfo = function()
     local icon = "  "
     local filename = (fn.expand "%" == "" and "Empty ")
-        or fn.expand "%"
+        or fn.expand "%:t"
 
     if filename ~= "Empty " then
         local devicons_present, devicons = pcall(require, "nvim-web-devicons")

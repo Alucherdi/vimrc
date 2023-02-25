@@ -1,1 +1,3 @@
+THEME = "everforest"
+
 require("alucherdi")

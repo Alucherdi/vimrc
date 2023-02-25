@@ -11,10 +11,6 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, nbopts)
 local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    -- Mappings.
-
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-
     local tsgd = '<cmd>tab split | lua vim.lsp.buf.definition()<cr>'
     local vsgd = '<cmd>vsplit | lua vim.lsp.buf.definition()<cr>'
     local sgd = '<cmd>split | lua vim.lsp.buf.definition()<cr>'
@@ -40,38 +36,30 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
---css only
 capabilities.textDocument.completion.completionItem.snippetSupport = true
---/css
 
--- javascript (node)
-lsp.tsserver.setup { on_attach = on_attach, capabilities = capabilities }
-lsp.html.setup { on_attach = on_attach, capabilities = capabilities }
-lsp.emmet_ls.setup { on_attach = on_attach, capabilities = capabilities }
+lsp.html.setup { on_attach = on_attach }
+lsp.emmet_ls.setup { on_attach = on_attach }
+
 lsp.cssls.setup {
-    on_attach = on_attach, capabilities = capabilities
-}
-lsp.volar.setup {
-    on_attach = on_attach, capabilities = capabilities,
-    init_options = {
-        typescript = {
-          serverPath = '/usr/lib/node_modules/typescript/lib/tsserverlibrary.js'
-        }
-    }
+    on_attach = on_attach,
+    capabilities = capabilities
 }
 
-lsp.hls.setup { on_attach = on_attach, capabilities = capabilities }
-lsp.gdscript.setup { on_attach = on_attach, capabilities = capabilities }
+lsp.tsserver.setup { on_attach = on_attach }
 
-lsp.sumneko_lua.setup { on_attach = on_attach, capabilities = capabilities }
+lsp.hls.setup { on_attach = on_attach }
+lsp.gdscript.setup { on_attach = on_attach }
 
-lsp.jdtls.setup { on_attach = on_attach, capabilities = capabilities }
+lsp.sumneko_lua.setup { on_attach = on_attach }
+
+lsp.jdtls.setup { on_attach = on_attach }
 lsp.dartls.setup {
-    on_attach = on_attach, capabilities = capabilities,
+    on_attach = on_attach,
     root_dir = util.root_pattern("pubspec.yaml", "*.dart", "main.dart")
 }
-lsp.rust_analyzer.setup { on_attach = on_attach, capabilities = capabilities }
-lsp.clangd.setup { on_attach = on_attach, capabilities = capabilities }
-lsp.cmake.setup { on_attach = on_attach, capabilities = capabilities }
+lsp.rust_analyzer.setup { on_attach = on_attach }
+lsp.clangd.setup { on_attach = on_attach }
+lsp.cmake.setup { on_attach = on_attach }

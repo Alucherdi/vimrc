@@ -8,7 +8,7 @@ return function(theme)
         CmpItemAbbrMatch = { fg = colors.blue, bold = true },
         CmpBorder = { fg = colors.grey },
         CmpDocBorder = { fg = colors.darker_black, bg = colors.darker_black },
-        CmPmenu = { bg = colors.grey },
+        CmPmenu = { bg = colors.darker_black },
 
         -- cmp item kinds
         CmpItemKindConstant = { fg = base16.base09 },
