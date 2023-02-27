@@ -53,7 +53,7 @@ lsp.tsserver.setup { on_attach = on_attach }
 lsp.hls.setup { on_attach = on_attach }
 lsp.gdscript.setup { on_attach = on_attach }
 
-lsp.sumneko_lua.setup { on_attach = on_attach }
+lsp.lua_ls.setup { on_attach = on_attach }
 
 lsp.jdtls.setup { on_attach = on_attach }
 lsp.dartls.setup {
