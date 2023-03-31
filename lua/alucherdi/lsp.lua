@@ -42,18 +42,13 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lsp.html.setup { on_attach = on_attach }
 lsp.emmet_ls.setup { on_attach = on_attach }
-
 lsp.cssls.setup {
     on_attach = on_attach,
     capabilities = capabilities
 }
 
 lsp.tsserver.setup { on_attach = on_attach }
-
-lsp.hls.setup { on_attach = on_attach }
-lsp.gdscript.setup { on_attach = on_attach }
-
-lsp.lua_ls.setup { on_attach = on_attach }
+lsp.svelte.setup { on_attach = on_attach }
 
 lsp.jdtls.setup { on_attach = on_attach }
 lsp.dartls.setup {

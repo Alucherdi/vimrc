@@ -2,7 +2,9 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use 'neovim/nvim-lspconfig'
+
     use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/nvim-treesitter-context'
 
     use 'kyazdani42/nvim-tree.lua'
 
