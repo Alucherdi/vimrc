@@ -14,3 +14,4 @@ require("alucherdi.nvimtree")
 require("alucherdi.statusline")
 
 require("alucherdi.colorscheme")
+require("alucherdi.harpoon")
