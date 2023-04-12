@@ -3,7 +3,7 @@ local lsp = require('lspconfig')
 local util = require('lspconfig/util')
 
 local nbopts = { noremap = true, silent = true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, nbopts)
+vim.keymap.set('n', '<space>d', vim.diagnostic.open_float, nbopts)
 vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, nbopts)
 vim.keymap.set('n', ']g', vim.diagnostic.goto_next, nbopts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, nbopts)
