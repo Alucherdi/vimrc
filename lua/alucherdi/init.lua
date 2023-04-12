@@ -1,17 +1,16 @@
 require("alucherdi.packer")
-require("alucherdi.treesitter")
-
-require("alucherdi.set")
-require("alucherdi.remap")
 require("alucherdi.keymap")
-require("alucherdi.lsp")
-require("alucherdi.compe")
-require("alucherdi.telescope")
-require("alucherdi.blankline")
 require("alucherdi.autocmds")
+require("alucherdi.set")
+require("alucherdi.bindings")
 
-require("alucherdi.nvimtree")
+require("alucherdi.plugconfs.treesitter")
+require("alucherdi.plugconfs.lsp")
+require("alucherdi.plugconfs.compe")
+require("alucherdi.plugconfs.telescope")
+require("alucherdi.plugconfs.blankline")
+require("alucherdi.plugconfs.nvimtree")
+require("alucherdi.plugconfs.harpoon")
+
 require("alucherdi.statusline")
-
 require("alucherdi.colorscheme")
-require("alucherdi.harpoon")
