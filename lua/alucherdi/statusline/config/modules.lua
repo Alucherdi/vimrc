@@ -1,12 +1,6 @@
 local fn = vim.fn
 local sep_style = vim.g.statusline_sep_style
 
-local default_sep_icons = {
-    default = { left = "", right = " " },
-    round = { left = "", right = "" },
-    block = { left = "█", right = "█" },
-    arrow = { left = "", right = "" },
-}
 
 local separators = (type(sep_style) == "table" and sep_style)
 or require("alucherdi.misc.icons").statusline_separators[sep_style]
@@ -52,10 +46,9 @@ M.modes = {
 
 M.mode = function()
     local m = vim.api.nvim_get_mode().mode
-    local current_mode = "%#" .. M.modes[m][2] .. "#" .. "  " .. M.modes[m][1]
-    local mode_sep1 = "%#" .. M.modes[m][2] .. "Sep" .. "#" .. sep_r
+    local current_mode = " " .. M.modes[m][1]
 
-    return current_mode .. " " .. mode_sep1 .. "%#ST_EmptySpace#" .. sep_r
+    return current_mode .. " " .. "%#ST_EmptySpace#"
 end
 
 M.fileInfo = function()
@@ -73,7 +66,7 @@ M.fileInfo = function()
         filename = " " .. filename .. " "
     end
 
-    return "%#St_file_info#" .. icon .. filename .. "%#St_file_sep#" .. sep_r
+    return "%#St_file_info#" .. icon .. filename .. "%#St_file_sep# "
 end
 
 M.git = function()
@@ -147,13 +140,13 @@ M.LSP_status = function()
 end
 
 M.cwd = function()
-    local dir_icon = "%#St_cwd_icon#" .. " "
+    local dir_icon = "%#St_cwd_icon#" .. "  "
     local dir_name = "%#St_cwd_text#" .. " " .. fn.fnamemodify(fn.getcwd(), ":t") .. " "
-    return (vim.o.columns > 85 and ("%#St_cwd_sep#" .. sep_l .. dir_icon .. dir_name)) or ""
+    return (vim.o.columns > 85 and ("%#St_cwd_sep#" .. dir_icon .. dir_name)) or ""
 end
 
 M.cursor_position = function()
-    local left_sep = "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon#" .. " "
+    local left_sep = "%#St_pos_sep#" .. "%#St_pos_icon#" .. "  "
 
     local current_line = fn.line "."
     local total_line = fn.line "$"

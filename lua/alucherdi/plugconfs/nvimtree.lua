@@ -15,7 +15,6 @@ local options = {
         width = 25,
     },
     renderer = {
-        root_folder_label = false
     },
     git = {
         enable = false,

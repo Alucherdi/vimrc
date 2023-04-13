@@ -12,7 +12,7 @@ rm('<Leader>gs', ':Git<CR>')
 rm('<Leader>cc', ':Git commit<CR>')
 
 -- nvim tree
-rm('<C-e>', ':NvimTreeOpen<CR>')
+rm('<C-e>', ':NvimTreeToggle<CR>')
 
 -- fast split movement
 rm('<C-h>', '<C-w>h')
