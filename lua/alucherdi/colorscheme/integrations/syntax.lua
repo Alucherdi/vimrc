@@ -1,118 +1,150 @@
-return function(theme)
-    local base16 = theme.base_16
+return function(ftheme)
+    local theme = ftheme.base_16
 
-    return {
+    local syntax = {
         Boolean = {
-            fg = base16.base09,
+            fg = theme.base09,
         },
 
         Character = {
-            fg = base16.base08,
+            fg = theme.base08,
         },
 
         Conditional = {
-            fg = base16.base0E,
+            fg = theme.base0E,
         },
 
         Constant = {
-            fg = base16.base08,
+            fg = theme.base08,
         },
 
         Define = {
-            fg = base16.base0E,
+            fg = theme.base0E,
             sp = "none",
         },
 
         Delimiter = {
-            fg = base16.base0F,
+            fg = theme.base0F,
         },
 
         Float = {
-            fg = base16.base09,
+            fg = theme.base09,
         },
 
         Variable = {
-            fg = base16.base05,
+            fg = theme.base05,
         },
 
         Function = {
-            fg = base16.base0D,
+            fg = theme.base0D,
         },
 
         Identifier = {
-            fg = base16.base08,
+            fg = theme.base08,
             sp = "none",
         },
 
         Include = {
-            fg = base16.base0D,
+            fg = theme.base0D,
         },
 
         Keyword = {
-            fg = base16.base0E,
+            fg = theme.base0E,
         },
 
         Label = {
-            fg = base16.base0A,
+            fg = theme.base0A,
         },
 
         Number = {
-            fg = base16.base09,
+            fg = theme.base09,
         },
 
         Operator = {
-            fg = base16.base05,
+            fg = theme.base05,
             sp = "none",
         },
 
         PreProc = {
-            fg = base16.base0A,
+            fg = theme.base0A,
         },
 
         Repeat = {
-            fg = base16.base0A,
+            fg = theme.base0A,
         },
 
         Special = {
-            fg = base16.base0C,
+            fg = theme.base0C,
         },
 
         SpecialChar = {
-            fg = base16.base0F,
+            fg = theme.base0F,
         },
 
         Statement = {
-            fg = base16.base08,
+            fg = theme.base08,
         },
 
         StorageClass = {
-            fg = base16.base0A,
+            fg = theme.base0A,
         },
 
         String = {
-            fg = base16.base0B,
+            fg = theme.base0B,
         },
 
         Structure = {
-            fg = base16.base0E,
+            fg = theme.base0E,
         },
 
         Tag = {
-            fg = base16.base0A,
+            fg = theme.base0A,
         },
 
         Todo = {
-            fg = base16.base0A,
-            bg = base16.base01,
+            fg = theme.base0A,
+            bg = theme.base01,
         },
 
         Type = {
-            fg = base16.base0A,
+            fg = theme.base0A,
             sp = "none",
         },
 
         Typedef = {
-            fg = base16.base0A,
+            fg = theme.base0A,
         },
     }
+
+    local merge = function(...) return vim.tbl_deep_extend("force", ...) end
+    if vim.version().minor >= 9 then
+        local semantic_hls = {
+            ["@lsp.type.class"] = { link = "Structure" },
+            ["@lsp.type.decorator"] = { link = "Function" },
+            ["@lsp.type.enum"] = { link = "Type" },
+            ["@lsp.type.enumMember"] = { link = "Constant" },
+            ["@lsp.type.function"] = { link = "@function" },
+            ["@lsp.type.interface"] = { link = "Structure" },
+            ["@lsp.type.macro"] = { link = "@macro" },
+            ["@lsp.type.method"] = { link = "@method" },
+            ["@lsp.type.namespace"] = { link = "@namespace" },
+            ["@lsp.type.parameter"] = { link = "@parameter" },
+            ["@lsp.type.property"] = { link = "@property" },
+            ["@lsp.type.struct"] = { link = "Structure" },
+            ["@lsp.type.type"] = { link = "@type" },
+            ["@lsp.type.typeParamater"] = { link = "TypeDef" },
+            ["@lsp.type.variable"] = { link = "@variable" },
+
+            -- ["@event"] = { fg = theme.base08 },
+            -- ["@modifier"] = { fg = theme.base08 },
+            -- ["@regexp"] = { fg = theme.base0F },
+        }
+
+        syntax = merge(syntax, semantic_hls)
+    end
+
+    return merge(
+        syntax,
+        require("alucherdi.colorscheme.integrations.treesitter")(theme)
+    )
 end

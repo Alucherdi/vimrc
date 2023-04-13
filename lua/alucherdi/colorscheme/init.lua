@@ -6,7 +6,7 @@ local integrations = {
     "devicons",
     "bufferline",
     "git",
-    "treesitter",
+    --"treesitter",
     "cmp",
     "telescope",
     "statusline",

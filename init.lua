@@ -1,3 +1,3 @@
-THEME = "everforest"
+THEME = "rosepine"
 
 require("alucherdi")

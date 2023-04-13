@@ -1,8 +1,8 @@
 return function(theme)
     local colors = theme.base_30
 
-    return {
 
+    return {
         StatusLine = {
             bg = colors.statusline_bg,
         },
@@ -11,28 +11,6 @@ return function(theme)
             fg = colors.light_grey,
             bg = colors.statusline_bg,
             bold = true,
-        },
-
-        -- LSP
-
-        St_lspError = {
-            fg = colors.red,
-            bg = colors.statusline_bg,
-        },
-
-        St_lspWarning = {
-            fg = colors.yellow,
-            bg = colors.statusline_bg,
-        },
-
-        St_LspHints = {
-            fg = colors.purple,
-            bg = colors.statusline_bg,
-        },
-
-        St_LspInfo = {
-            fg = colors.green,
-            bg = colors.statusline_bg,
         },
 
         St_LspStatus = {
@@ -48,113 +26,6 @@ return function(theme)
         St_LspStatus_Icon = {
             fg = colors.black,
             bg = colors.nord_blue,
-        },
-
-        -- MODES
-
-        St_NormalMode = {
-            bg = colors.nord_blue,
-            fg = colors.black,
-            bold = true,
-        },
-
-        St_InsertMode = {
-            bg = colors.dark_purple,
-            fg = colors.black,
-
-            bold = true,
-        },
-
-        St_TerminalMode = {
-            bg = colors.green,
-            fg = colors.black,
-            bold = true,
-        },
-
-        St_NTerminalMode = {
-            bg = colors.yellow,
-            fg = colors.black,
-            bold = true,
-        },
-
-        St_VisualMode = {
-            bg = colors.cyan,
-            fg = colors.black,
-            bold = true,
-        },
-
-        St_ReplaceMode = {
-            bg = colors.orange,
-            fg = colors.black,
-
-            bold = true,
-        },
-
-        St_ConfirmMode = {
-            bg = colors.teal,
-            fg = colors.black,
-
-            bold = true,
-        },
-
-        St_CommandMode = {
-            bg = colors.green,
-            fg = colors.black,
-
-            bold = true,
-        },
-
-        St_SelectMode = {
-            bg = colors.nord_blue,
-            fg = colors.black,
-
-            bold = true,
-        },
-
-        -- Separators for mode
-        St_NormalModeSep = {
-            fg = colors.nord_blue,
-            bg = colors.grey,
-        },
-
-        St_InsertModeSep = {
-            fg = colors.dark_purple,
-            bg = colors.grey,
-        },
-
-        St_TerminalModeSep = {
-            fg = colors.green,
-            bg = colors.grey,
-        },
-
-        St_NTerminalModeSep = {
-            fg = colors.yellow,
-            bg = colors.grey,
-        },
-
-        St_VisualModeSep = {
-            fg = colors.cyan,
-            bg = colors.grey,
-        },
-
-        St_ReplaceModeSep = {
-            fg = colors.orange,
-            bg = colors.grey,
-        },
-
-        St_ConfirmModeSep = {
-            fg = colors.teal,
-            bg = colors.grey,
-        },
-
-        St_CommandModeSep = {
-            fg = colors.green,
-            bg = colors.grey,
-        },
-
-        St_SelectModeSep = {
-            fg = colors.nord_blue,
-            bg = colors.grey,
         },
 
         St_EmptySpace = {

@@ -1,12 +1,8 @@
 return {
-    run = function(config)
-        vim.g.statusline_sep_style = config.separator_style
+    run = function()
+        vim.g.statusline_sep_style = "default"
 
         local modules = require "alucherdi.statusline.config.modules"
-
-        if config.overriden_modules then
-            modules = vim.tbl_deep_extend("force", modules, config.overriden_modules())
-        end
 
         return table.concat {
             modules.mode(),
@@ -17,10 +13,11 @@ return {
             modules.LSP_progress(),
             "%=",
 
+            string.upper(vim.bo.fileencoding) == "" and "" or string.upper(vim.bo.fileencoding) .. "  ",
             modules.LSP_Diagnostics(),
             modules.LSP_status() or "",
             modules.cwd(),
-            modules.cursor_position(),
+            modules.cursor_position()
         }
     end,
 }
