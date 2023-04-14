@@ -10,6 +10,7 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, nbopts)
 
 local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    client.server_capabilities.semanticTokensProvider = nil
 
     local tsgd = '<cmd>tab split | lua vim.lsp.buf.definition()<cr>'
     local vsgd = '<cmd>vsplit | lua vim.lsp.buf.definition()<cr>'
