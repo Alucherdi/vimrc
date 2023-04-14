@@ -28,12 +28,12 @@ M.modes = {
     ["v"] =   { "V", "St_VisualMode" },
     ["V"] =   { "VL", "St_VisualMode" },
     ["Vs"] =  { "VL(CO)", "St_VisualMode" },
-    [""] =  { "V-B", "St_VisualMode" },
+    [""] =  { "VB", "St_VisualMode" },
     ["R"] =   { "R", "St_ReplaceMode" },
-    ["Rv"] =  { "V-R", "St_ReplaceMode" },
+    ["Rv"] =  { "VR", "St_ReplaceMode" },
     ["s"] =   { "S", "St_SelectMode" },
-    ["S"] =   { "S-L", "St_SelectMode" },
-    [""] =  { "S-B", "St_SelectMode" },
+    ["S"] =   { "SL", "St_SelectMode" },
+    [""] =  { "SB", "St_SelectMode" },
     ["c"] =   { "COMMAND", "St_CommandMode" },
     ["cv"] =  { "COMMAND", "St_CommandMode" },
     ["ce"] =  { "COMMAND", "St_CommandMode" },
@@ -79,7 +79,7 @@ M.git = function()
     local added = (git_status.added and git_status.added ~= 0) and ("  " .. git_status.added) or ""
     local changed = (git_status.changed and git_status.changed ~= 0) and ("  " .. git_status.changed) or ""
     local removed = (git_status.removed and git_status.removed ~= 0) and ("  " .. git_status.removed) or ""
-    local branch_name = "  " .. git_status.head
+    local branch_name = "" .. git_status.head
 
     return "%#St_gitIcons#" .. branch_name .. added .. changed .. removed
 end

@@ -16,6 +16,11 @@ return require('packer').startup(function(use)
         requires = {{'kyazdani42/nvim-web-devicons'}}
     }
 
+    use {
+        "lewis6991/gitsigns.nvim",
+        requires = {{'nvim-lua/plenary.nvim'}},
+    }
+
     -- <3
     use 'tpope/vim-fugitive'
     use 'nvim-lua/popup.nvim'

@@ -1,2 +1,2 @@
-Statusline = {}
-vim.opt.statusline = "%!v:lua.require('alucherdi.statusline.config').run()"
+statusline = require 'alucherdi.statusline.config'
+vim.opt.statusline = "%!v:lua.statusline.run()"

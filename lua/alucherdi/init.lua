@@ -11,6 +11,7 @@ require("alucherdi.plugconfs.telescope")
 require("alucherdi.plugconfs.blankline")
 require("alucherdi.plugconfs.nvimtree")
 require("alucherdi.plugconfs.harpoon")
+require("alucherdi.plugconfs.gitsigns")
 
 require("alucherdi.statusline")
 require("alucherdi.colorscheme")
