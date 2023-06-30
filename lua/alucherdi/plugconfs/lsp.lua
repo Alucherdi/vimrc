@@ -60,3 +60,5 @@ lsp.dartls.setup {
 lsp.rust_analyzer.setup {}
 lsp.clangd.setup {}
 lsp.cmake.setup {}
+
+lsp.zls.setup {}
