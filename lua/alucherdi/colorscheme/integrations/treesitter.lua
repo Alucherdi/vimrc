@@ -17,7 +17,7 @@ return function(theme)
         },
 
         ["@constant"] = {
-            fg = theme.base08,
+            fg = theme.baseCONST,
         },
 
         ["@constant.builtin"] = {
@@ -85,7 +85,7 @@ return function(theme)
         },
 
         ["@namespace"] = {
-            fg = theme.base08,
+            fg = theme.baseNS,
         },
 
         ["@none"] = {
@@ -175,7 +175,7 @@ return function(theme)
         },
 
         ["@variable"] = {
-            fg = theme.base05,
+            fg = theme.baseVAR,
         },
 
         ["@variable.builtin"] = {
@@ -199,7 +199,7 @@ return function(theme)
         },
 
         ["@field"] = {
-            fg = theme.base08,
+            fg = theme.base05,
         },
 
         ["@field.key"] = {

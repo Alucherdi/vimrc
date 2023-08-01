@@ -1,3 +1,3 @@
-THEME = "everblush"
+THEME = "casio"
 
 require("alucherdi")

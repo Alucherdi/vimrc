@@ -7,7 +7,7 @@ return function(ftheme)
         },
 
         Character = {
-            fg = theme.base08,
+            fg = theme.baseT,
         },
 
         Conditional = {
@@ -45,7 +45,7 @@ return function(ftheme)
         },
 
         Include = {
-            fg = theme.base0D,
+            fg = theme.baseINC,
         },
 
         Keyword = {
@@ -107,7 +107,7 @@ return function(ftheme)
         },
 
         Type = {
-            fg = theme.base0A,
+            fg = theme.baseTYPES,
             sp = "none",
         },
 
