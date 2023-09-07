@@ -50,6 +50,14 @@ M.base_16 = {
   base0D = "#a7c080",
   base0E = "#e67e80",
   base0F = "#d699b6",
+
+  baseT = "#7fbbb3",
+
+  baseINC   = "#a7c080",
+  baseNS    = "#7fbbb3",
+  baseVAR   = "#d3c6aa",
+  baseTYPES = "#83c092",
+  baseCONST = "#7fbbb3",
 }
 
 vim.opt.bg = "dark"

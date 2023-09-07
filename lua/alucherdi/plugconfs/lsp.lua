@@ -46,9 +46,23 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+lsp.lua_ls.setup {
+    on_init = function(client)
+        client.config.settings = vim.tbl_deep_extend("force", client.config.settings.Lua, {
+            workspace = {
+                library = { vim.env.VIMRUNTIME },
+                checkThirdParty = true,
+            }
+        })
+    end
+}
+
 lsp.html.setup {}
+lsp.pylsp.setup {}
 lsp.emmet_ls.setup {}
 lsp.cssls.setup {capabilities = capabilities}
+
+lsp.ocamlls.setup {}
 
 lsp.tsserver.setup {}
 lsp.svelte.setup {}
