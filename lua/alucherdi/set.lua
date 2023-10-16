@@ -53,6 +53,7 @@ set.clipboard = 'unnamed'
 cmd('autocmd Filetype dart setlocal et ts=2 sw=2 sts=2')
 cmd('autocmd Filetype yaml setlocal et ts=2 sw=2 sts=2')
 cmd('autocmd Filetype javascript setlocal et ts=2 sw=2 sts=2')
+cmd('autocmd Filetype typescript setlocal et ts=2 sw=2 sts=2')
 cmd('autocmd Filetype vue setlocal et ts=2 sw=2 sts=2')
 cmd('autocmd Filetype html setlocal et ts=2 sw=2 sts=2')
 cmd('autocmd Filetype css setlocal et ts=2 sw=2 sts=2')

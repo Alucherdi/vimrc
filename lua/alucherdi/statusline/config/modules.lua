@@ -119,7 +119,7 @@ M.LSP_Diagnostics = function()
 
     errors = (errors and errors > 0) and ("%#St_lspError#" .. " " .. errors .. " ") or ""
     warnings = (warnings and warnings > 0) and ("%#St_lspWarning#" .. "  " .. warnings .. " ") or ""
-    hints = (hints and hints > 0) and ("%#St_lspHints#" .. "ﯧ " .. hints .. " ") or ""
+    hints = (hints and hints > 0) and ("%#St_lspHints#" .. "󰛩 " .. hints .. " ") or ""
     info = (info and info > 0) and ("%#St_lspInfo#" .. "󰋼 " .. info .. " ") or ""
 
     return errors .. warnings .. hints .. info

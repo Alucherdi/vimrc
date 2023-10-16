@@ -67,7 +67,6 @@ lsp.ocamlls.setup {}
 lsp.tsserver.setup {}
 lsp.svelte.setup {}
 
-lsp.jdtls.setup {}
 lsp.dartls.setup {
     root_dir = util.root_pattern("pubspec.yaml", "*.dart", "main.dart")
 }

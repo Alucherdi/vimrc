@@ -3,6 +3,7 @@ require("alucherdi.keymap")
 require("alucherdi.autocmds")
 require("alucherdi.set")
 require("alucherdi.bindings")
+require("alucherdi.colorscheme")
 
 require("alucherdi.plugconfs.treesitter")
 require("alucherdi.plugconfs.lsp")
@@ -14,4 +15,3 @@ require("alucherdi.plugconfs.harpoon")
 require("alucherdi.plugconfs.gitsigns")
 
 require("alucherdi.statusline")
-require("alucherdi.colorscheme")
