@@ -65,7 +65,7 @@ lsp.cssls.setup {capabilities = capabilities}
 lsp.ocamlls.setup {}
 
 lsp.tsserver.setup {}
-lsp.svelte.setup {}
+lsp.eslint.setup {}
 
 lsp.dartls.setup {
     root_dir = util.root_pattern("pubspec.yaml", "*.dart", "main.dart")
