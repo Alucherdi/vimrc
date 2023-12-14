@@ -64,6 +64,10 @@ lsp.cssls.setup {capabilities = capabilities}
 
 lsp.ocamlls.setup {}
 
+lsp.hls.setup{
+  filetypes = { 'haskell', 'lhaskell', 'cabal' },
+}
+
 lsp.tsserver.setup {}
 lsp.eslint.setup {}
 

@@ -14,12 +14,6 @@ rm('<Leader>cc', ':Git commit<CR>')
 -- nvim tree
 rm('<C-e>', ':NvimTreeToggle<CR>')
 
--- fast split movement
---[[rm('<C-h>', '<C-w>h')
-rm('<C-j>', '<C-w>j')
-rm('<C-k>', '<C-w>k')
-rm('<C-l>', '<C-w>l')]]--
-
 -- yank from cursor
 rm('Y', [[y$]])
 
